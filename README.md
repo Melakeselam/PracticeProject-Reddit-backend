@@ -1,1 +1,1 @@
-# PracticeProject-Reddit-backend
+# PracticeProject-RedditClone-backend
