@@ -17,7 +17,7 @@ public class SubredditController {
     private final SubredditService subredditService;
 
     @PostMapping
-    public ResponseEntity createSubreddit(@RequestBody SubredditDto subredditDto){
+    public ResponseEntity<SubredditDto> createSubreddit(@RequestBody SubredditDto subredditDto){
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -25,9 +25,16 @@ public class SubredditController {
     }
 
     @GetMapping
-    public ResponseEntity getAllSugreddit(){
+    public ResponseEntity<List<SubredditDto>> getAllSubreddit(){
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(subredditService.getAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<SubredditDto> getSubreddit(@PathVariable Long id){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(subredditService.getById(id));
     }
 }

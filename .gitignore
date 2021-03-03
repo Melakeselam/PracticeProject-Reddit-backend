@@ -35,3 +35,6 @@ build/
 ### Property and Environment Files
 *.jks
 *.properties
+
+### Docker
+Dockerfile
